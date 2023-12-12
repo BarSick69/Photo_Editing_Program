@@ -1,0 +1,28 @@
+Proiectul constă în două fișiere principale: interactive.c și imageprocessing.c. 
+Programul permite utilizatorilor să efectueze diverse operații asupra imaginilor printr-o interfață de linie de comandă.
+
+interactive.c: Acest fișier gestionează intrarea utilizatorului și integrează funcționalitățile oferite în imageprocessing.c. 
+Utilizatorii pot încărca imagini, aplica filtre, manipula pixeli și altele, folosind comenzi.
+
+imageprocessing.c: Acest fișier conține funcții pentru procesarea imaginilor. 
+Fiecare funcție corespunde unei sarcini specifice de manipulare a imaginii, cum ar fi inversarea orizontală, rotirea la stânga, 
+decuparea, extinderea, lipirea și aplicarea filtrelor.
+
+Pentru a rula programul, compilați fișierele bmp.c imageprocessing.c și interactive.c și executați binarul rezultat. 
+Urmați instrucțiunile afișate pentru a introduce comenzi și a interacționa cu funcționalitățile de procesare a imaginilor.
+
+Comenzi:
+
+e : Exit - închide programul
+l N M path: Load - alocă și încarcă imaginea de dimensiune NxM aflată la calea path
+s index path: Save - salvează imaginea de pe indexul index la calea specificată prin path
+ah index: Apply Horizontal Flip - aplică operația de flip pe orizontală imaginii de la indexul index
+ar index: Apply Rotate - aplică operația de rotație la stânga imaginii de la indexul index
+ac index x y w h: Apply Crop - aplică operația de crop cu parametrii dați imaginii de la indexul index
+ae index rows cols R G B: Apply Extend - aplică operația de extend cu parametrii dați imaginii de la indexul index
+ap index_dst index_src x y: Apply Paste - aplică operația de paste cu parametrii dați imaginii de la indexul index_dst
+cf size [list of values]: Create filter - alocă și crează un filtru de dimensiune size cu valorile date de lista de valori 
+                          (exemplu: dacă se creează un filtru de dimensiune 3, atunci după size vor urma 9 valori)
+af index_img index_filter: Apply filter - aplică filtrul de pe indexul index_filter pe imaginea de pe indexul index_img
+di index_img: Delete image - șterge și dezalocă imaginea de pe indexul index_img
+df index_filter: Delete filter - șterge și dezalocă filtrul de pe indexul index_filter
